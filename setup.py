@@ -7,8 +7,8 @@ setup(name='xNormal',
       description='Wrapper for xNormal',
       author='Daniel Holden',
       author_email='contact@daniel-holden.com',
-      url='',
+      url='https://github.com/orangeduck/Python-xNormal',
       py_modules=['xNormal'],
-      data_files=["README.md", "LICENSE.md"],
+      data_files=["./README.md", "./LICENSE.md"],
       license="BSD"
     )
