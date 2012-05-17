@@ -1,15 +1,10 @@
 License
 =======
 
-Source Code
------------
-
 All source code is licensed under BSD
 
 Copyright (c) 2010, Daniel Holden
 All rights reserved.
-
-Corange is licensed under a basic BSD license.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
