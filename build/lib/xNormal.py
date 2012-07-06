@@ -26,7 +26,7 @@ def run_config(conf):
     f.write(conf)
     f.close()
     
-    retcode = os.system("%s %s" % (path, config_file))
+    retcode = os.system("\"%s\" %s" % (path, config_file))
     os.remove(config_file)
     
     return retcode
@@ -34,7 +34,7 @@ def run_config(conf):
    
 def run_config_filename(conf_filename):
     """ Runs xNormal using the path to a configuration file. """
-    retcode = os.system("%s %s" % (path, conf_filename))
+    retcode = os.system("\"%s\" %s" % (path, conf_filename))
     return retcode
     
     
