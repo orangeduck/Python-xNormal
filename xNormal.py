@@ -241,7 +241,7 @@ def generation_options(out_filename, **kwargs):
         ("curve_tonemap", "CurvTonemap", "2Col"),
         ("curve_distribution", "CurvDistribution", "Cosine"),
         ("curve_algorithm", "CurvAlgorithm", "Average"),
-        ("curve_smoothing", "CurvSmoothing",  True),
+        ("curve_smoothing", "CurvSmoothing", True),
         
         ("gen_derivative_normals", "GenDerivNM", False),
         
