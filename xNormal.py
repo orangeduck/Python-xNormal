@@ -99,6 +99,7 @@ def low_mesh_options(filename, **kwargs):
         ("normals_x", "NMSwizzleX", "X+"),
         ("normals_y", "NMSwizzleY", "Y+"),
         ("normals_z", "NMSwizzleZ", "Z+"),
+        ("cage_file", "CageFile", ""),
         ("high_override_tangent", "HighpolyNormalsOverrideTangentSpace", True),
         ("transparency", "TransparencyMode", None),
         ("alpha_test", "AlphaTestValue", 127),
