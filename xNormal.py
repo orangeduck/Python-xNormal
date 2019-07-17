@@ -239,7 +239,7 @@ def generation_options(out_filename, **kwargs):
         ("curve_algorithm", "CurvAlgorithm", "Average"),
         ("curve_smoothing", "CurvSmoothing",  True),
         
-        ("gen_derivitive_normals", "GenDerivNM", False),
+        ("gen_derivative_normals", "GenDerivNM", False),
     ]
     
     """
@@ -271,7 +271,7 @@ def generation_options(out_filename, **kwargs):
         ("radiosity_normals_background_color", "RadNMBackgroundColor", (0, 0, 0)),
         ("high_vcols_background_color", "BakeHighpolyVColsBackgroundCol", (255, 255, 255)),
         ("curve_background_color", "CurvBackgroundColor", (0, 0, 0)),
-        ("derivitive_normals_background_color", "DerivNMBackgroundColor", (0, 0, 0)),
+        ("derivative_normals_background_color", "DerivNMBackgroundColor", (0, 0, 0)),
     ]
     
     def lookup(dict, key, default):
