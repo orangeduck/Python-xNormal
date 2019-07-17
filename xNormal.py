@@ -330,7 +330,7 @@ def config(high_meshes, low_meshes, opts):
     conf_string += "    %s\n" % color_opt_string
     
     conf_string += "  </GenerateMaps>\n"
-    conf_string += "</Settings>"
+    conf_string += "</Settings>\n"
     
     return conf_string
 
