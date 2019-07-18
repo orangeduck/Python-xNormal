@@ -7,7 +7,7 @@ config_file: The default name for generated config files
 """
 
 path = "xNormal.exe"
-version = "3.17.9"
+version = "3.19.3"
 config_file = "xNormal.xml"
 
 
@@ -53,7 +53,9 @@ def high_mesh_options(filename, **kwargs):
         ("ignore_vertex_colors", "IgnorePerVertexColor", True),
         ("average_normals", "AverageNormals", "UseExportedNormals"),
         ("texture_is_normalmap", "BaseTexIsTSNM", False),
-        ("path", "File", ""),    
+        ("path", "File", ""),
+        ("position_offset", "PositionOffset", "0.0000;0.0000;0.0000"),
+        ("base_texture", "BaseTex", ""),
     ]
     
     def lookup(dict, key, default):
@@ -95,8 +97,9 @@ def low_mesh_options(filename, **kwargs):
         ("receive_shadows", "ReceiveShadows", True),
         ("cull_backfaces", "BackfaceCull", True),
         ("normals_x", "NMSwizzleX", "X+"),
-        ("normals_x", "NMSwizzleY", "Y+"),
-        ("normals_x", "NMSwizzleZ", "Z+"),
+        ("normals_y", "NMSwizzleY", "Y+"),
+        ("normals_z", "NMSwizzleZ", "Z+"),
+        ("cage_file", "CageFile", ""),
         ("high_override_tangent", "HighpolyNormalsOverrideTangentSpace", True),
         ("transparency", "TransparencyMode", None),
         ("alpha_test", "AlphaTestValue", 127),
@@ -105,6 +108,7 @@ def low_mesh_options(filename, **kwargs):
         ("match_uvs", "MatchUVs", False),
         ("offset_u", "UOffset", False),
         ("offset_v", "VOffset", False),
+        ("position_offset", "PositionOffset", "0.0000;0.0000;0.0000"),
     ]
     
     def lookup(dict, key, default):
@@ -237,9 +241,17 @@ def generation_options(out_filename, **kwargs):
         ("curve_tonemap", "CurvTonemap", "2Col"),
         ("curve_distribution", "CurvDistribution", "Cosine"),
         ("curve_algorithm", "CurvAlgorithm", "Average"),
-        ("curve_smoothing", "CurvSmoothing",  True),
+        ("curve_smoothing", "CurvSmoothing", True),
         
-        ("gen_derivitive_normals", "GenDerivNM", False),
+        ("gen_derivative_normals", "GenDerivNM", False),
+        
+        ("gen_translucency", "GenTranslu", False),
+        ("translucency_rays", "TransluRaysPerSample", 128),
+        ("translucency_distribution", "TransluDistribution", "Cosine"),
+        ("translucency_cone_angle", "TransluConeAngle", 162.0),
+        ("translucency_bias", "TransluBias", 0.0005),
+        ("translucency_distance", "TransluDist", 1.0),
+        ("translucency_jitter", "TransluJitter", False),
     ]
     
     """
@@ -271,7 +283,8 @@ def generation_options(out_filename, **kwargs):
         ("radiosity_normals_background_color", "RadNMBackgroundColor", (0, 0, 0)),
         ("high_vcols_background_color", "BakeHighpolyVColsBackgroundCol", (255, 255, 255)),
         ("curve_background_color", "CurvBackgroundColor", (0, 0, 0)),
-        ("derivitive_normals_background_color", "DerivNMBackgroundColor", (0, 0, 0)),
+        ("derivative_normals_background_color", "DerivNMBackgroundColor", (0, 0, 0)),
+        ("translucency_background_color", "TransluBackgroundColor", (0, 0, 0)),
     ]
     
     def lookup(dict, key, default):
@@ -318,7 +331,7 @@ def config(high_meshes, low_meshes, opts):
     conf_string += "    %s\n" % color_opt_string
     
     conf_string += "  </GenerateMaps>\n"
-    conf_string += "</Settings>"
+    conf_string += "</Settings>\n"
     
     return conf_string
-    
+
