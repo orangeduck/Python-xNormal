@@ -7,7 +7,7 @@ It is licensed under BSD
 
 For any issues feel free to contact me at:
 
-contact@daniel-holden.com
+`contact@theorangeduck.com`
 
 Basic Usage
 -----------
@@ -25,9 +25,9 @@ Extended Usage 1
 
 The belows shows some more features.
 
-First the path is set. By default the wrapper assumes xNormal.exe is in the PATH variable.
+First the path is set. By default the wrapper assumes `xNormal.exe` is in the PATH variable.
 
-Seconly it generates a normal map with a switch coordinate system and an ao map with fewer rays and jitter. Finally is generates a convexity map.
+Secondly it generates a normal map with a switch coordinate system and an AO map with fewer rays and jitter. Finally is generates a convexity map.
 
 For a full list of options have a look in the source code where they are listed and easy to see.
 
@@ -47,7 +47,7 @@ Extended Usage 2
 
 Scripting xNormal goes via the form of supplying it with a configuration file. These can be generated and saved for later use.
 
-To build a configuration file __xNormal.config__ it must be supplied with a list of high mesh options, a list of low mesh options and a list of generation options.
+To build a configuration file `xNormal.config` it must be supplied with a list of high mesh options, a list of low mesh options and a list of generation options.
 
 ```python
 import xNormal
