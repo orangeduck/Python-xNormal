@@ -15,7 +15,7 @@ def run(high_path, low_path, out_path, **opts):
     """ Basic interface to run xNormal using a single high and low poly mesh """
     
     opts["out"] = os.path.abspath(out_path)
-    conf = config([high_mesh_options(high_path)], [low_mesh_options(low_path)], generation_options(out_path, **opts))
+    conf = config([high_mesh_options(high_path, **opts)], [low_mesh_options(low_path, **opts)], generation_options(out_path, **opts))
     return run_config(conf)
 
     
